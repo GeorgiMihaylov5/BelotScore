@@ -3,6 +3,12 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Programing/BelotScore/BelotScore/app/src/main/res/layout-w1240dp/activity_login.xml" value="0.1318607764390897" />
+        <entry key="..\:/Programing/BelotScore/BelotScore/app/src/main/res/layout-w936dp/activity_login.xml" value="0.15390625" />
+        <entry key="..\:/Programing/BelotScore/BelotScore/app/src/main/res/layout/about_layout.xml" value="0.20520833333333333" />
+        <entry key="..\:/Programing/BelotScore/BelotScore/app/src/main/res/layout/activity_about.xml" value="0.20520833333333333" />
+        <entry key="..\:/Programing/BelotScore/BelotScore/app/src/main/res/layout/activity_login.xml" value="0.20520833333333333" />
+        <entry key="..\:/Programing/BelotScore/BelotScore/app/src/main/res/layout/activity_main.xml" value="0.29393115942028986" />
         <entry key="..\:/Users/gogog/AndroidStudioProjects/BelotScore/app/src/main/res/drawable/ic_back.xml" value="0.30052083333333335" />
         <entry key="..\:/Users/gogog/AndroidStudioProjects/BelotScore/app/src/main/res/drawable/ic_belotScoreGame_foreground.xml" value="0.22135416666666666" />
         <entry key="..\:/Users/gogog/AndroidStudioProjects/BelotScore/app/src/main/res/drawable/ic_belotScore_foreground.xml" value="0.22135416666666666" />

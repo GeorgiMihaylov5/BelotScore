@@ -3,8 +3,10 @@ package com.example.belotscore
 import android.annotation.SuppressLint
 import android.app.AlertDialog
 import android.content.DialogInterface
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.text.Layout
 import android.view.Menu
 import android.view.MenuItem
 import android.widget.Button
@@ -18,6 +20,7 @@ import kotlin.text.StringBuilder
 class MainActivity : AppCompatActivity() {
     private val list1:ArrayList<History> = arrayListOf()
     private val list2:ArrayList<History> = arrayListOf()
+    private var round = 0
 
     @SuppressLint("SetTextI18n")
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -86,7 +89,7 @@ class MainActivity : AppCompatActivity() {
             }
         }
     }
-    private var round = 0
+
 
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
@@ -98,12 +101,19 @@ class MainActivity : AppCompatActivity() {
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when(item.itemId){
-            R.id.about -> Toast.makeText(this,"Georgi top",Toast.LENGTH_LONG).show()
+            R.id.about -> {
+                finish()
+                val intent = Intent(this, about().javaClass)
+                startActivity(intent)
+            }
             R.id.newGame -> {
                 val builder = AlertDialog.Builder(this)
 
-                builder.setTitle("Start a new game")
-                builder.setMessage("Are you sure you want to start a new name?")
+                with(builder) {
+
+                    setTitle("Start a new game")
+                    setMessage("Are you sure you want to start a new name?")
+                }
                 builder.setPositiveButton("Yes",DialogInterface.OnClickListener{ dialog, _ ->
                     finish()
                     startActivity(this.intent)
@@ -113,7 +123,7 @@ class MainActivity : AppCompatActivity() {
                     dialog.cancel()
                 })
 
-                var alert: AlertDialog = builder.create()
+                val alert: AlertDialog = builder.create()
                 alert.show()
 
             }
@@ -142,16 +152,16 @@ private fun undo(all:TextView, list:ArrayList<History>, totalResult:TextView){
     historyList.removeLast()
     list.removeLast()
 
-    var l = ""
+    var lastAddedPoint = ""
     val index = historyList.count() - 1
     //if (round > 0) {
         for (i in historyList.last()) {
-            l += i.toString()
+            lastAddedPoint += i.toString()
             if (i == '+'){
                 break
             }
         }
-        historyList[index] = l
+        historyList[index] = lastAddedPoint
 
         val sb = StringBuilder()
         for (i in historyList) {
